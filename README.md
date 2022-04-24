@@ -13,7 +13,9 @@ These results will help us determine the effectiveness of the models when compar
 
 1. Logistic Regression
 	a. Naive Random Oversampling - The naive random oversampling algorithm is used to oversample the high risk data points
+		
 		- Balanced Accuracy Score: .6439
+		
 		- Precision and Recall: The precision ("pre" column) for the both classes are in the 99th percentile or higher, while the recall ("rec" column) for both classes is average. This model doesn't seem to be overly strong at predicting the risk classes.
 
 		![random_over](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/random_over.png)
