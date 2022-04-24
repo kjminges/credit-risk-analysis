@@ -12,49 +12,53 @@ After working with the data, we decided to test the accuracy of two different ma
 These results will help us determine the effectiveness of the models when compared to each other and help us determine if there is a model that could be relied on to effectively predict whether an individual is a good or bad credit risk.
 
 1. Logistic Regression
+	
 	a. Naive Random Oversampling - The naive random oversampling algorithm is used to oversample the high risk data points
-		
-		- Balanced Accuracy Score: .6439
-		
-		- Precision and Recall: The precision ("pre" column) for the both classes are in the 99th percentile or higher, while the recall ("rec" column) for both classes is average. This model doesn't seem to be overly strong at predicting the risk classes.
+	- Balanced Accuracy Score: .6439
+	- Precision and Recall: The precision ("pre" column) for the both classes are in the 99th percentile or higher, while the recall ("rec" column) for both classes is average. This model doesn't seem to be overly strong at predicting the risk classes.
 
-		![random_over](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/random_over.png)
+	![random_over](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/random_over.png)
+
 
 
 	b. SMOTE Oversampling - The SMOTE oversampling algorithm is used to oversample the high risk data points 
-		- Balanced Accuracy Score: .6629		
-		- Precision and Recall: Similar to the previous model, the precision for both classes is in the 99th percentile, and the recall for both classes is again average. This oversampling technique is a slightly stronger predictor with an average recall of .64 (compared to .60 with the naive random oversampling).
+	- Balanced Accuracy Score: .6629		
+	- Precision and Recall: Similar to the previous model, the precision for both classes is in the 99th percentile, and the recall for both classes is again average. This oversampling technique is a slightly stronger predictor with an average recall of .64 (compared to .60 with the naive random oversampling).
 
-		![smote](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/smote.png)
+	![smote](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/smote.png)
+
 
 
 	c. Undersampling - The Cluster Centroids algorithm is used to undersample the low risk data points
-		- Balanced Accuracy Score: .5903		
-		- Precision and Recall: The undersampling technique leads to similar precision results as the undersampling, but the recall is worse with more weight being shifted to the low_risk class, driving the average down to .57.
+	- Balanced Accuracy Score: .5903		
+	- Precision and Recall: The undersampling technique leads to similar precision results as the undersampling, but the recall is worse with more weight being shifted to the low_risk class, driving the average down to .57.
 
-		![under](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/under.png)
+	![under](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/under.png)
+
 
 
 	d. Combination Sampling (SMOTEENN) - A combination over- and under-sampling algorithm is used to simultaneously oversample the high risk data points, while undersample the low risk data points
-		- Balanced Accuracy Score: .6376		
-		- Precision and Recall: The results for the SMOTEENN are similar to that of the SMOTE oversampling. The precision metrics have stayed the same throughout the logistic regression models, but the recall is maxed out at an average of .64.
+	- Balanced Accuracy Score: .6376		
+	- Precision and Recall: The results for the SMOTEENN are similar to that of the SMOTE oversampling. The precision metrics have stayed the same throughout the logistic regression models, but the recall is maxed out at an average of .64.
 
-		![smoteenn](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/smoteenn.png)
+	![smoteenn](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/smoteenn.png)
 
 
 2. Ensemble Learners
+	
 	a. Balanced Random Forest Classifier - 
-		- Balanced Accuracy Score: .8731		
-		- Precision and Recall: Compared to the logistic regression models, the precision for the high risk individuals has decreased slightly but still within an acceptable range at .03 (for predicting the low risk class). As for the recall, this has increased to a more acceptable level with a recall of .70 and .87 for the high and low classes, respectively. The average recall of .87 is very indicative of a strong model.
+	- Balanced Accuracy Score: .8731		
+	- Precision and Recall: Compared to the logistic regression models, the precision for the high risk individuals has decreased slightly but still within an acceptable range at .03 (for predicting the low risk class). As for the recall, this has increased to a more acceptable level with a recall of .70 and .87 for the high and low classes, respectively. The average recall of .87 is very indicative of a strong model.
 
-		![random_forest](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/random_forest.png)
+	![random_forest](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/random_forest.png)
+
 
 
 	b. Easy Ensemble Ada Classifier - 
-		- Balanced Accuracy Score: .9317		
-		- Precision and Recall: The Easy ensemble model shows even stronger recall results than the random forest with an average recall of .94. Unfortunately, this increase in recall is coupled with a worse precision for the high risk class. The precision of .09 is in a range where the model starts to be questioned.
+	- Balanced Accuracy Score: .9317		
+	- Precision and Recall: The Easy ensemble model shows even stronger recall results than the random forest with an average recall of .94. Unfortunately, this increase in recall is coupled with a worse precision for the high risk class. The precision of .09 is in a range where the model starts to be questioned.
 
-		![easy_ensamble](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/easy_ensamble.png)
+	![easy_ensamble](https://github.com/kjminges/Credit_Risk_Analysis/blob/main/easy_ensamble.png)
 
 
 ## Conclusion
